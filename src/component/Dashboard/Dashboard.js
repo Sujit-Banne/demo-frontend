@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+import Navbar from '../Navbar/Navbar';
 import './Dashboard.css';
 import VideoPlayer from '../VideoPlayer/videoPlayer';
 
@@ -73,28 +73,31 @@ function Dashboard() {
 
     const videos = videoList.map((video) => {
         return (
-            <div
-                className="video col-xs-12 col-sm-12 col-md-3 col-lg-4"
-                key={video._id}
-                onClick={() => handleThumbnailClick(video.video_path, video._id)}
-            >
-                <div className="video-thumbnail">
-                    <img src={video.thumbnail_path} alt="video thubmnail" />
-                </div>
-                <span className="username">
-                    <Link to={'/api/videos/' + video.upload_title}>
+            <>
+                <div
+                    className="video col-xs-12 col-sm-12 col-md-3 col-lg-4"
+                    key={video._id}
+                    onClick={() => handleThumbnailClick(video.video_path, video._id)}
+                >
+                    <div className="video-thumbnail">
+                        <img src={video.thumbnail_path} alt="video thubmnail" />
+                    </div>
+                    <span className="username">
+                        {/* <Link to={'/api/videos/' + video.upload_title}> */}
                         {video.uploader_name}
-                    </Link>
-                </span>
-                <span className="video-title">
-                    {video.upload_title.replace(/_/g, ' ')}
-                </span>
-            </div>
+                        {/* </Link> */}
+                    </span>
+                    <span className="video-title">
+                        {video.upload_title.replace(/_/g, ' ')}
+                    </span>
+                </div>
+            </>
         );
     });
 
     return (
-        <React.Fragment>
+        <>
+            <Navbar />
             <div className="container mt-5">
                 <h4>Videos</h4>
                 <hr className="my-4" />
@@ -116,7 +119,7 @@ function Dashboard() {
                 )}
 
             </div>
-        </React.Fragment>
+        </>
     );
 }
 

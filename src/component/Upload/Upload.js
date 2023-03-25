@@ -3,11 +3,10 @@ import axios from 'axios';
 import { Progress } from 'reactstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-
+import Navbar from '../Navbar/Navbar'
 import 'react-toastify/dist/ReactToastify.css';
 import './Upload.css';
 
-// import Navbar from '../Navbar/Navbar';
 
 const Upload = () => {
     const navigate = useNavigate();
@@ -67,11 +66,11 @@ const Upload = () => {
     };
 
 
-    // if (!localStorage.getItem('userTokenTime')) navigate("/signIn");
+    if (!localStorage.getItem('userTokenTime')) navigate("/signin");
 
     return (
         <>
-            {/* <Navbar /> */}
+            <Navbar />
             <div className="container mt-5">
                 <div className="form-group">
                     <ToastContainer />

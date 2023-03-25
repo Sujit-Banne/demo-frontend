@@ -5,6 +5,7 @@ import SignUp from './component/form/SignUp/SignUp';
 import Dashboard from './component/Dashboard/Dashboard';
 import Upload from './component/Upload/Upload';
 import VideoPlayer from './component/VideoPlayer/videoPlayer';
+// import SignOut from './component/Signout/Signout';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/" element={<Dashboard />} />
         <Route exact path="/upload" element={<Upload />} />
         <Route exact path="/videos" element={<VideoPlayer />} />
+        {/* <Route exact path="/signout" element={<SignOut />} /> */}
       </Routes>
     </Router>
   );
