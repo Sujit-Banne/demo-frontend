@@ -10,6 +10,7 @@ function Dashboard() {
     const [videoList, setVideoList] = useState([]);
     const [selectedVideoUrl, setSelectedVideoUrl] = useState(null);
     const [selectedVideoId, setSelectedVideoId] = useState(null);
+    const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
         const tokenTime = JSON.parse(localStorage.getItem('userTokenTime'));
@@ -70,8 +71,11 @@ function Dashboard() {
         }
     };
 
+    const filteredVideoList = videoList.filter((video) => {
+        return video.upload_title.toLowerCase().includes(searchQuery.toLowerCase());
+    });
 
-    const videos = videoList.map((video) => {
+    const videos = filteredVideoList.map((video) => {
         return (
             <>
                 <div
@@ -80,7 +84,7 @@ function Dashboard() {
                     onClick={() => handleThumbnailClick(video.video_path, video._id)}
                 >
                     <div className="video-thumbnail">
-                        <img src={video.thumbnail_path} alt="video thubmnail" />
+                        <img src={video.thumbnail_path} alt="video thubmnail" key={video._id} />
                     </div>
                     <span className="username">
                         {/* <Link to={'/api/videos/' + video.upload_title}> */}
@@ -102,11 +106,24 @@ function Dashboard() {
                 <h4>Videos</h4>
                 <hr className="my-4" />
 
+                <div className="form-group">
+                    <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Search by video title"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                </div>
+
                 {selectedVideoUrl ? (
                     <div className="selected-video">
                         <VideoPlayer videoUrl={selectedVideoUrl} />
                         <div className="button-group">
-                            <button className="delete-button" onClick={() => handleDeleteClick(selectedVideoId)}>
+                            <button
+                                className="delete-button"
+                                onClick={() => handleDeleteClick(selectedVideoId)}
+                            >
                                 Delete
                             </button>
                             <button className="close-button" onClick={handleCloseClick}>
@@ -117,10 +134,10 @@ function Dashboard() {
                 ) : (
                     <div className="streams row">{videos}</div>
                 )}
-
             </div>
         </>
     );
+
 }
 
 export default Dashboard;

@@ -16,7 +16,7 @@ function SignIn() {
     const onSubmitHandler = (e) => {
         e.preventDefault();
         if (firstName !== '' && lastName !== '' && email !== '' && password !== '' && /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)) {
-            axios.post('/api/signUp', {
+            axios.post('/api/signup', {
                 firstName: firstName,
                 lastName: lastName,
                 email: email,
@@ -31,7 +31,7 @@ function SignIn() {
             });
         } else {
             setError('Please enter valid details.');
-        } 
+        }
     }
 
     return (
@@ -88,7 +88,7 @@ function SignIn() {
             </div>
             <div className="d-flex justify-content-between align-items-end">
                 <input type="submit" name="submit" className="btn btn-info btn-md" value="Submit" />
-                <Link to="/signIn" className="text-info">Login here</Link>
+                <Link to="/signin" className="text-info">Login here</Link>
             </div>
         </Form>
     )

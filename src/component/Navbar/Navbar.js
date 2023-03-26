@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 function Navbar(props) {
     const [loggedIn, setLoggedIn] = useState(localStorage.getItem('userTokenTime'));
@@ -24,6 +24,7 @@ function Navbar(props) {
                             <>
                                 <NavLink className="nav-item nav-link" to="/" exact>Home</NavLink>
                                 <NavLink className="nav-item nav-link" to="/upload">Upload</NavLink>
+                                {/* <NavLink className="nav-item nav-link" to="/myvideos">My Videos</NavLink> */}
                                 <button className="nav-item nav-link btn btn-link" onClick={handleSignOut}>Sign Out</button>
                             </>
                             :
