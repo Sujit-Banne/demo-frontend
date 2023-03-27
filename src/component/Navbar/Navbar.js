@@ -22,9 +22,9 @@ function Navbar(props) {
                     <div className="navbar-nav">
                         {loggedIn ?
                             <>
-                                <NavLink className="nav-item nav-link" to="/" exact>Home</NavLink>
+                                <NavLink className="nav-item nav-link" to="/home" exact>Home</NavLink>
                                 <NavLink className="nav-item nav-link" to="/upload">Upload</NavLink>
-                                {/* <NavLink className="nav-item nav-link" to="/myvideos">My Videos</NavLink> */}
+                                <NavLink className="nav-item nav-link" to="/myvideos">My Videos</NavLink>
                                 <button className="nav-item nav-link btn btn-link" onClick={handleSignOut}>Sign Out</button>
                             </>
                             :

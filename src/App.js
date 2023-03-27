@@ -6,6 +6,7 @@ import Dashboard from './component/Dashboard/Dashboard';
 import Upload from './component/Upload/Upload';
 import VideoPlayer from './component/VideoPlayer/videoPlayer';
 import MyVideos from './component/Dashboard/My-videos';
+import ExistingPage from './component/Dashboard/ExistingPage'
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       <Routes>
         <Route exact="true" path="/signin" element={<SignIn />} />
         <Route exact="true" path="/signup" element={<SignUp />} />
-        <Route exact="true" path="/" element={<Dashboard />} />
+        <Route exact="true" path="/home" element={<Dashboard />} />
+        <Route exact="true" path="/" element={<ExistingPage />} />
         <Route exact="true" path="/upload" element={<Upload />} />
         <Route exact="true" path="/videos" element={<VideoPlayer />} />
         <Route exact="true" path="/myvideos" element={<MyVideos />} />

@@ -103,9 +103,6 @@ function Dashboard() {
         <>
             <Navbar />
             <div className="container mt-5">
-                <h4>Videos</h4>
-                <hr className="my-4" />
-
                 <div className="form-group">
                     <input
                         type="text"
@@ -115,6 +112,9 @@ function Dashboard() {
                         onChange={(e) => setSearchQuery(e.target.value)}
                     />
                 </div>
+                <h4>Videos</h4>
+                <hr className="my-4" />
+
 
                 {selectedVideoUrl ? (
                     <div className="selected-video">

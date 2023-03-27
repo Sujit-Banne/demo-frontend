@@ -33,7 +33,7 @@ const SignIn = () => {
                         time: new Date().getTime(),
                     };
                     localStorage.setItem('userTokenTime', JSON.stringify(data));
-                    navigate('/');
+                    navigate('/home');
                 })
                 .catch((err) => {
                     console.log(err);
