@@ -1,57 +1,110 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import ReactPlayer from "react-player";
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import './ExistingPage.css'
 
-function DemoVideosPage() {
-    const [searchText, setSearchText] = useState("");
+function VideoGallery() {
+    const navigate = useNavigate();
+    const [videoList, setVideoList] = useState([]);
+    const [selectedVideoId, setSelectedVideoId] = useState(null);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [showAllVideos, setShowAllVideos] = useState(false);
 
-    const handleSearchInputChange = (event) => {
-        setSearchText(event.target.value);
+    const handleThumbnailClick = (videoId) => {
+        navigate('/signin')
     };
 
-    const handleSearchSubmit = (event) => {
-        event.preventDefault();
-        // Do something with the search text, such as searching for videos
+    // Make API request to fetch video data
+    useEffect(() => {
+        axios.get('/api/existingvideo')
+            .then((response) => {
+                setVideoList(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
+
+    const filteredVideoList = videoList.filter((video) => {
+        return video.upload_title.toLowerCase().includes(searchQuery.toLowerCase());
+    });
+
+    const videos = filteredVideoList.map((video) => {
+        return (
+            <div
+                className="video-container"
+                key={video._id}
+                onClick={() => handleThumbnailClick(video._id)}
+            >
+                <div className="video-thumbnail">
+                    <img src={video.thumbnail_path} alt="video thubmnail" key={video._id} />
+                </div>
+                <div className="video-details">
+                    <span className="username">
+                        {video.uploader_name}
+                    </span>
+                    <span className="video-title">
+                        {video.upload_title.replace(/_/g, ' ')}
+                    </span>
+                </div>
+            </div>
+        );
+    });
+
+    const toggleViewAll = () => {
+        setShowAllVideos(!showAllVideos);
     };
+
+    const displayedVideos = showAllVideos ? videos : videos.slice(0, 4);
 
     return (
-        <div>
-            <nav>
-                <form onSubmit={handleSearchSubmit}>
+        <>
+            <div className="navbar">
+                <img src="./images/logo.PNG" alt="logo" className="logo" />
+                <div className="search-bar">
                     <input
                         type="text"
-                        placeholder="Search videos..."
-                        value={searchText}
-                        onChange={handleSearchInputChange}
+                        className="search-input"
+                        placeholder="Search by video title"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
                     />
-                    <button type="submit">Search</button>
-                </form>
-                <Link to="/signin">Sign In</Link>
-                <Link to="/signup">Sign Up</Link>
-            </nav>
-            <h1>Demo Videos</h1>
-            <div>
-                <ReactPlayer
-                    url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                    controls={true}
-                    width="640px"
-                    height="360px"
-                />
-                <ReactPlayer
-                    url="https://www.youtube.com/watch?v=8YjFbMbfXaQ"
-                    controls={true}
-                    width="640px"
-                    height="360px"
-                />
-                <ReactPlayer
-                    url="https://www.youtube.com/watch?v=vTIIMJ9tUc8"
-                    controls={true}
-                    width="640px"
-                    height="360px"
-                />
+                </div>
+                <div className="button">
+                    <button className="login-button" onClick={() => navigate('/signin')}>
+                        Login
+                    </button>
+                    <span className="navbar-separator">|</span>
+                    <button className="register-button" onClick={() => navigate('/signup')}>
+                        Register
+                    </button>
+                </div>
             </div>
-        </div>
+            <div className="carousel">
+                <img src="./images/crousel.png" alt="img" className='poster' />
+            </div>
+            <div className="container">
+                <h4 className='togglebar'>Recent
+
+                    {filteredVideoList.length >= 4 && (
+                        <button className="toggle-button" onClick={toggleViewAll}>
+                            {showAllVideos ? 'View Less' : 'View All'}
+                        </button>
+                    )}
+                </h4>
+
+                <div className="videos-container">
+                    {displayedVideos}
+                </div>
+
+                {selectedVideoId && (
+                    <div className="selected-video">
+                        <img src={filteredVideoList.find(video => video._id === selectedVideoId).thumbnail_path} alt="selected video thumbnail" />
+                    </div>
+                )}
+            </div>
+        </>
     );
 }
 
-export default DemoVideosPage;
+export default VideoGallery;

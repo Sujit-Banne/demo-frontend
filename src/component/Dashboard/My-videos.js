@@ -36,7 +36,6 @@ const MyVideos = ({ uploader_name }) => {
             {videos.map((video) => (
                 <div key={video._id}>
                     <h2>{video.title}</h2>
-                    <p>{video.description}</p>
                 </div>
             ))}
             {error && <div>{error}</div>}

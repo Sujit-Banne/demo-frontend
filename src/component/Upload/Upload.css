@@ -1,61 +1,48 @@
-.files input {
-    outline: 2px dashed #92b0b3;
-    outline-offset: -10px;
-    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
-    transition: outline-offset .15s ease-in-out, background-color .15s linear;
-    padding: 120px 0px 85px 35%;
-    text-align: center !important;
-    margin: 0;
-    width: 100% !important;
-  }
-  
-  .files input:focus {
-    outline: 2px dashed #92b0b3;
-    outline-offset: -10px;
-    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
-    transition: outline-offset .15s ease-in-out, background-color .15s linear; 
-    border:1px solid #92b0b3;
-  }
-  
-  .files {
-    position:relative
-  }
-  
-  .files::after {  
-    pointer-events: none;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 50px;
-    right: 0;
-    height: 56px;
-    content: "";
-    display: block;
-    margin: 0 auto;
-    background-size: 100%;
-    background-repeat: no-repeat;
-  }
-  
-  .files::before {
-    position: absolute;
-    bottom: 10px;
-    left: 0;  
-    pointer-events: none;
-    width: 100%;
-    right: 0;
-    height: 123px;
-    content: " or drag it here. ";
-    display: block;
-    margin: 0 auto;
-    color: #2ea591;
-    font-weight: 600;
-    text-transform: capitalize;
-    text-align: center;
-  }
 
 
+.upload-container {
+  margin: 100px;
+  padding: 20px;
+  background-color: #0f121ff5;
+  color: rgb(159, 155, 155);
+}
 
-  .progress-bar-custom {
-    height: 20px !important;
-  }
-  
+h4 {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+label {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+input[type="file"] {
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.progress-bar-custom {
+  height: 30px;
+}
+
+.btn-success {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+  background-color: #3e8e41;
+}
