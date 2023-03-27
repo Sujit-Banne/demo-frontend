@@ -1,0 +1,44 @@
+.navbar {
+    height: 70px;
+    padding: 0 20px;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #040404;
+  }
+  
+  .navbar-nav {
+    align-items: center;
+  }
+  
+  .nav-item {
+    margin-right: 10px;
+  }
+  
+  .nav-link {
+    color: #0b0b0b;
+  }
+  
+  .nav-link:hover {
+    color: #000000;
+  }
+  
+  .nav-link.active {
+    color: #000000;
+    font-weight: bold;
+  }
+  
+  .btn-link {
+    color: #000000;
+    text-decoration: underline;
+    margin-left: 10px;
+    margin-right: 0;
+    padding: 0;
+  }
+  
+  .btn-link:hover {
+    color: #000000;
+    text-decoration: underline;
+  }
