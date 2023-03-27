@@ -33,6 +33,8 @@ const SignIn = () => {
                         time: new Date().getTime(),
                     };
                     localStorage.setItem('userTokenTime', JSON.stringify(data));
+                    localStorage.setItem('uploader_name', res.data.user[0].name);
+                    console.log(res.data.user[0].name);
                     navigate('/home');
                 })
                 .catch((err) => {

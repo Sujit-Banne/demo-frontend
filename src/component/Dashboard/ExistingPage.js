@@ -11,7 +11,8 @@ function VideoGallery() {
     const [showAllVideos, setShowAllVideos] = useState(false);
 
     const handleThumbnailClick = (videoId) => {
-        navigate('/signin')
+        const selectedVideo = videoList.find(video => video._id === videoId);
+        setSelectedVideoId(selectedVideo.video_path);
     };
 
     // Make API request to fetch video data
@@ -99,7 +100,7 @@ function VideoGallery() {
 
                 {selectedVideoId && (
                     <div className="selected-video">
-                        <img src={filteredVideoList.find(video => video._id === selectedVideoId).thumbnail_path} alt="selected video thumbnail" />
+                        <video src={selectedVideoId} controls />
                     </div>
                 )}
             </div>
