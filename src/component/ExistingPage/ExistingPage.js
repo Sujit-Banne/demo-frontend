@@ -49,7 +49,10 @@ function VideoGallery() {
 
 
                 <div className="video-thumbnail">
-                    <img src={video.thumbnail_path} alt="video thubmnail" key={video._id} />
+                    <img src={video.thumbnail_path} alt="video thubmnail" key={video._id}
+                        onClick={() => {
+                            navigate(`/profile/${video._id}`, { state: video })
+                        }} />
                 </div>
                 <div className="video-details">
                     <span className="username">

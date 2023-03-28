@@ -12,6 +12,7 @@ const Upload = () => {
     const navigate = useNavigate();
     const [selectedVideos, setSelectedVideos] = useState(null);
     const [loaded, setLoaded] = useState(0);
+    const [input, setInput] = useState('')
 
     const maxSelectFile = (event) => {
         let files = event.target.files;
@@ -48,6 +49,7 @@ const Upload = () => {
         const data = new FormData();
         for (let i = 0; selectedVideos && i < selectedVideos.length; i++) {
             data.append('file', selectedVideos[i]);
+            data.append('video_description', input);
         }
         axios.post('/api/upload', data, {
             headers: {
@@ -86,6 +88,8 @@ const Upload = () => {
                             multiple="multiple"
                             accept="video/*"
                             onChange={fileChangeHandler} />
+                        <input type="text" name='video_description' id="" value={input}
+                            onInput={(e) => setInput(e.target.value)} />
                         <Progress max="100" color="success" value={loaded} className="mt-4 mb-1 progress-bar-custom">
                             {isNaN(Math.round(loaded, 2)) ? 0 : Math.round(loaded, 2)}%
                         </Progress>
