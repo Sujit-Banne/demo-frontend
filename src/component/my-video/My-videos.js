@@ -99,9 +99,14 @@ const MyVideos = ({ uploader_name }) => {
                             <video src={selectedVideo.video_path} controls />
                             <div className="video-info">
                                 <h1 className="head">{selectedVideo.upload_title}</h1>
-                                <button onClick={() => handleDeleteClick(selectedVideo._id)}>Delete</button>
+                                <h2 className='d'>Description</h2>
+                                <p className='des'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br />Lorem Ipsum has been t he industry’s standard dummy text ever since the 1500s, <br />
+                                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br />
+                                    It has survived not only five centuries</p>
+                                <button onClick={() => handleDeleteClick(selectedVideo._id)} className='delete'>Delete</button>
 
-                                <button>Save</button>
+                                <button className='save'>Save</button>
+
                             </div>
                         </div>
                     )}

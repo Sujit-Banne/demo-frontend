@@ -80,7 +80,7 @@ const SignIn = () => {
                     />
                 </div>
                 <div className="form-password">
-                    <label htmlFor="password" className="text-info">
+                    <label htmlFor="password" className="password-text">
                         Password:
                     </label>
                     <br />

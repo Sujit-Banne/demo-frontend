@@ -54,13 +54,15 @@
 }
 
 
-.text-info {
-    color: white;
+.password-text {
+    margin-top: 1rem;
+    font-size: 1rem;
+    position: relative;
+    text-align: center;
     text-decoration: none;
-}
-
-.text-info:hover {
-    text-decoration: underline;
+    right: 0px;
+    top: 1px;
+    color: #ccc;
 }
 
 .signin-image{

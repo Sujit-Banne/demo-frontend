@@ -89,7 +89,7 @@ function VideoGallery() {
                         Login
                     </button>
                     <span className="navbar-separator">|</span>
-                    <button className="register" onClick={() => navigate("/signup")}>
+                    <button className="register-signup" onClick={() => navigate("/signup")}>
                         Register
                     </button>
                 </div>
