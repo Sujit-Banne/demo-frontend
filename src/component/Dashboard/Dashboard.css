@@ -40,10 +40,20 @@
 
 /* search */
 .search-bar{
-  width: 300px;
+  width: 500px;
   display: flex;
   align-items: center;
+  position: relative;
 }
+/* .form-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 1.5%;
+  left: 34%
+} */
+
 
 /* crousel */
 .crousel{

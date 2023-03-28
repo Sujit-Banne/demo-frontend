@@ -142,3 +142,46 @@ h4 {
 .selected-video img {
   max-width: 100%;
 }
+
+/* crousel */
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+}
+
+.carousel-thumbnail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 90%;
+  cursor: pointer;
+}
+
+.carousel-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.carousel-details {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.username {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+}
+
+.carousel-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}

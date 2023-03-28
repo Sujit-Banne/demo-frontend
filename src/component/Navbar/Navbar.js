@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import './Navbar.css'
 
-function Navbar(props) {
+function Navbar({ onSearchQueryChange }) {
     const [loggedIn, setLoggedIn] = useState(localStorage.getItem('userTokenTime'));
     const navigate = useNavigate();
 
@@ -12,9 +12,20 @@ function Navbar(props) {
         navigate('/');
     };
 
+    const [searchQuery, setSearchQuery] = useState('');
+
+    const handleSearchInputChange = (event) => {
+        setSearchQuery(event.target.value);
+        onSearchQueryChange(event.target.value);
+    };
+
+
     return (
         <nav className='navbar'>
             <img src="./images/logo.PNG" alt="logo" className="logo" onClick={() => navigate('/home')} />
+            <div className="navbar-search">
+                <input type="text" placeholder="Search videos" value={searchQuery} onChange={handleSearchInputChange} />
+            </div>
             <div className="navbar-nav">
                 {loggedIn ? (
                     <>
@@ -35,3 +46,5 @@ function Navbar(props) {
 }
 
 export default Navbar;
+
+
