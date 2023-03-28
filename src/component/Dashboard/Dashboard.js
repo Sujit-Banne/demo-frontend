@@ -68,7 +68,7 @@ function Dashboard() {
                         onClick={() => handleThumbnailClick(video.video_path, video._id)}
                     >
                         <div className="video-thumbnail">
-                            <img src={video.thumbnail_path} alt="video thubmnail" key={video._id} />
+                            <img src={video.thumbnail_path} alt="video thubmnail" key={video._id} target="_blank" />
                         </div>
                         <span className="username">
                             {video.uploader_name}

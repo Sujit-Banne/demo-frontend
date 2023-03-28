@@ -6,7 +6,6 @@ import Dashboard from './component/Dashboard/Dashboard';
 import Upload from './component/Upload/Upload';
 import VideoPlayer from './component/VideoPlayer/videoPlayer';
 import ExistingPage from './component/ExistingPage/ExistingPage'
-import ExisitngVideoPlayer from './component/ExistingPage/existingVideoPlayer'
 import MyVideos from './component/my-video/My-videos';
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
         <Route exact="true" path="/signup" element={<SignUp />} />
         <Route exact="true" path="/home" element={<Dashboard />} />
         <Route exact="true" path="/" element={<ExistingPage />} />
-        <Route exact="true" path="/videoplayer/:videoPath" element={<ExisitngVideoPlayer />} />
         <Route exact="true" path="/upload" element={<Upload />} />
         <Route exact="true" path="/videos" element={<VideoPlayer />} />
         <Route exact="true" path="/myvideos" element={<MyVideos />} />

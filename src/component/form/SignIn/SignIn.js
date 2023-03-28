@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
-import Form from '../Form';
-import '../form.css';
+import './Signin.css';
 
 const SignIn = () => {
     const [email, setEmail] = useState('');
@@ -56,49 +54,58 @@ const SignIn = () => {
     };
 
     return (
-        <Form onSubmit={onSubmitHandler}>
-            <h3 className="text-center text-info">Login</h3>
-            <div className="form-group">
-                <label htmlFor="email" className="text-info">
-                    Email:
-                </label>
-                <br />
-                <input
-                    id="email"
-                    className="form-control"
-                    type="email"
-                    name="email"
-                    placeholder="example@domain.com"
-                    onChange={onEmailChangeHandler}
-                    required
-                />
+        <div className='signin-main'>
+            <div className='signin-image'>
+                <img src="./images/Signup.jpg" alt="img" className='signin-pic' />
             </div>
-            <div className="form-group">
-                <label htmlFor="password" className="text-info">
-                    Password:
-                </label>
-                <br />
-                <input
-                    id="password"
-                    className="form-control"
-                    type="password"
-                    name="password"
-                    placeholder="********"
-                    onChange={onPasswordChangeHandler}
-                    required
-                />
-            </div>
-            {error && <div className="text-danger mb-3">{error}</div>}
-            <div className="d-flex justify-content-between align-items-end">
-                <button className="btn btn-info btn-md" type="submit">
-                    Submit
-                </button>
-                <Link to="/signUp" className="text-info">
-                    Sign Up here
-                </Link>
-            </div>
-        </Form>
-    );
+            <form
+                id="login-form"
+                className="form-main"
+                method="post"
+                onSubmit={onSubmitHandler}>
+                <h3 className="login-text">Login</h3>
+                <div className="form-email">
+                    <label htmlFor="email" className="email-text">
+                        Email:
+                    </label>
+                    <br />
+                    <input
+                        id="email"
+                        className="newEmailClassName"
+                        type="email"
+                        name="email"
+                        placeholder="example@domain.com"
+                        onChange={onEmailChangeHandler}
+                        required
+                    />
+                </div>
+                <div className="form-password">
+                    <label htmlFor="password" className="text-info">
+                        Password:
+                    </label>
+                    <br />
+                    <input
+                        id="password"
+                        className="form-control"
+                        type="password"
+                        name="password"
+                        placeholder="********"
+                        onChange={onPasswordChangeHandler}
+                        required
+                    />
+                </div>
+                {error && <div className="text-danger mb-3">{error}</div>}
+                <div className="d-flex justify-content-between align-items-end">
+                    <button className="btn btn-info btn-md" type="submit">
+                        SignIn
+                    </button>
+                    <Link to="/signUp" className="register-link">
+                        Register
+                    </Link>
+                </div>
+            </form>
+        </div>
+    )
 };
 
 export default SignIn;

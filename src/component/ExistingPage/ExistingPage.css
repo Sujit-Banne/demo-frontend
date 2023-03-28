@@ -30,28 +30,20 @@
 
 
 /* login and register  */
-.login-button{
+.login{
   background-color: #000000;
+  color: #ccc;
   border: none;
-  cursor: pointer;
-
-}
-.login-button:hover{
-  background-color: #4c4c4c;
-  border: none;
-  border-radius: 20px;
+  font-size: 20px;
 }
 
-.register-button{
+.register{
   background-color: #000000;
+  color: #ccc;
+  font-size: 20px;
   border: none;
-  cursor: pointer;
 }
-.register-button:hover{
-  background-color: #474545;
-  border: none;
-  border-radius: 20px;
-}
+
 
 .navbar-separator {
   margin: 0 10px;
