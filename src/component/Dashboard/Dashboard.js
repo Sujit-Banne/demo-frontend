@@ -20,7 +20,7 @@ function Dashboard() {
         const tokenTime = JSON.parse(localStorage.getItem('userTokenTime'));
         if (tokenTime) {
             axios
-                .get('https://video-sharing-mern.onrender.com/api/videolist', {
+                .get('http://localhost:5050/api/videolist', {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                         Authorization: 'Bearer ' + tokenTime.token,

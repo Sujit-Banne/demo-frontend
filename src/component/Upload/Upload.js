@@ -51,7 +51,7 @@ const Upload = () => {
             data.append('file', selectedVideos[i]);
             data.append('video_description', input);
         }
-        axios.post('https://video-sharing-mern.onrender.com/api/upload', data, {
+        axios.post('http://localhost:5050/api/upload', data, {
             headers: {
                 'Content-Type': 'multipart/form-data',
                 'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('userTokenTime')).token

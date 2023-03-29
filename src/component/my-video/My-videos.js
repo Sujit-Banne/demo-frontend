@@ -17,7 +17,7 @@ const MyVideos = ({ uploader_name }) => {
                 if (!token) {
                     throw new Error('No token found');
                 }
-                const response = await axios.get(`https://video-sharing-mern.onrender.com/api/user_upload/${localStorage.getItem('uploader_name')}`, {
+                const response = await axios.get(`http://localhost:5050/api/user_upload/${localStorage.getItem('uploader_name')}`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 setVideos(response.data.contacts);
@@ -49,7 +49,7 @@ const MyVideos = ({ uploader_name }) => {
             if (!token) {
                 throw new Error('No token found');
             }
-            await axios.delete(`https://video-sharing-mern.onrender.com/api/videos/${videoId}`, {
+            await axios.delete(`http://localhost:5050/api/videos/${videoId}`, {
                 headers: { Authorization: `Bearer ${token.token}` }
             });
             // Remove the deleted video from the video list

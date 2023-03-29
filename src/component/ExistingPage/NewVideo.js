@@ -13,7 +13,7 @@ function NewVideo() {
 
     // Make API request to fetch video data
     useEffect(() => {
-        fetch('https://video-sharing-mern.onrender.com/api/existingvideo')
+        fetch('http://localhost:5050/api/existingvideo')
             .then((response) => response.json())
             .then((data) => {
                 setVideoList(data);

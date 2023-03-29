@@ -21,7 +21,7 @@ const Signup = () => {
             return;
         }
         try {
-            const response = await axios.post('https://video-sharing-mern.onrender.com/api/signup', {
+            const response = await axios.post('http://localhost:5050/api/signup', {
                 name,
                 email,
                 password,
