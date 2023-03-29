@@ -58,7 +58,7 @@ function Dashboard() {
     const randomIndex = Math.floor(Math.random() * videoList.length);
 
     const videos = filteredVideoList
-        .slice(0, showAllVideos ? filteredVideoList.length : 6) // show 6 videos by default or all if toggle is clicked
+        .slice(0, showAllVideos ? filteredVideoList.length : 50) // show 6 videos by default or all if toggle is clicked
         .map((video) => {
             return (
                 <>

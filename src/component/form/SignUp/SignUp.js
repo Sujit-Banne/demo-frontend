@@ -31,7 +31,6 @@ const Signup = () => {
             if (response.status === 201) {
                 navigate('/');
             }
-            console.log(response);
         } catch (err) {
             if (err.response && err.response.data && err.response.data.message) {
                 setError(err.response.data.message);

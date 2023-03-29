@@ -27,14 +27,16 @@ function VideoGallery() {
 
     // Make API request to fetch video data
     useEffect(() => {
-        axios.get('https://video-sharing-mern.onrender.com/api/existingvideo')
-            .then((response) => {
-                setVideoList(response.data);
+        fetch('https://video-sharing-mern.onrender.com/api/existingvideo')
+            .then((response) => response.json())
+            .then((data) => {
+                setVideoList(data);
             })
             .catch((error) => {
                 console.log(error);
             });
     }, []);
+
 
     const filteredVideoList = videoList.filter((video) => {
         return video.upload_title.toLowerCase().includes(searchQuery.toLowerCase());
