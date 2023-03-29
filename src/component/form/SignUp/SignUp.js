@@ -21,7 +21,7 @@ const Signup = () => {
             return;
         }
         try {
-            const response = await axios.post('/api/signup', {
+            const response = await axios.post('https://video-sharing-mern.onrender.com/api/signup', {
                 name,
                 email,
                 password,
@@ -31,6 +31,7 @@ const Signup = () => {
             if (response.status === 201) {
                 navigate('/');
             }
+            console.log(response);
         } catch (err) {
             if (err.response && err.response.data && err.response.data.message) {
                 setError(err.response.data.message);

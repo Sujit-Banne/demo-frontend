@@ -27,7 +27,7 @@ function VideoGallery() {
 
     // Make API request to fetch video data
     useEffect(() => {
-        axios.get('/api/existingvideo')
+        axios.get('https://video-sharing-mern.onrender.com/api/existingvideo')
             .then((response) => {
                 setVideoList(response.data);
             })

@@ -19,7 +19,7 @@ const SignIn = () => {
             /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)
         ) {
             axios
-                .post('/api/signin', {
+                .post('https://video-sharing-mern.onrender.com/api/signin', {
                     email: email,
                     password: password,
                 })
