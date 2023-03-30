@@ -88,7 +88,8 @@ const Upload = () => {
                             multiple="multiple"
                             accept="video/*"
                             onChange={fileChangeHandler} />
-                        <input type="text" name='video_description' id="" value={input}
+                        <h4 className='Description'>Description</h4>
+                        <input type="text" name='video_description' id="video-description" value={input}
                             onInput={(e) => setInput(e.target.value)} />
                         <Progress max="100" color="success" value={loaded} className="mt-4 mb-1 progress-bar-custom">
                             {isNaN(Math.round(loaded, 2)) ? 0 : Math.round(loaded, 2)}%

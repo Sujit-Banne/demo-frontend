@@ -73,11 +73,13 @@ h4 {
 
 .toggle-button {
   background-color: #1a1d27f5;
-  border: none;
-  cursor: pointer;
-  padding: 5px 10px;
-  margin-left: auto;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-left: auto;
+    color: white;
 }
+
 
 .toggle-button:hover{
   background-color: #797878;

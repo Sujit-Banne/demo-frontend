@@ -13,24 +13,34 @@
 .save{
     position: relative;
     padding: 10px;
-    top: 39px;
-    left: 202px;
+    top: 123px;
+    left: 129px;
+    background-color: #C4B4F8;
+    width: 100px;
+    border: none;
+    border-radius: 20px;
+    padding: 15px;
 }
 .delete{
     position: relative;
-    right: 307px;
+    right: 158px;
     padding: 10px;
-    top: 39px;
+    top: 123px;
+    background-color: #F43D3D;
+    border: none;
+    border-radius: 20px;
+    padding: 15px;
+    width: 100px;
 }
 .d{
-    right: 300px;
-    top: 10px;
+    right: 281px;
+    top: 27px;
     position: relative;
 }
 
 .des{
     position: relative;
-    top: 20px;
+    top: 49px;
 }
 
 /* Left container */

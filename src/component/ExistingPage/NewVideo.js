@@ -53,7 +53,16 @@ function NewVideo() {
 
     return (
         <>
-
+            <div className="navbar">
+                <img src={LOGO} alt="logo" className="logo" onClick={() => navigate('/home')} />
+                <div className="search-bar">
+                    <input
+                        type="text"
+                        className="search-input"
+                        placeholder="Search by video title"
+                    />
+                </div>
+            </div>
             <video src={selectedVideoPath} controls className='newvideo'></video>
             <div className="main-newvideo-container">
                 {videos}

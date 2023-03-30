@@ -7,7 +7,7 @@ function NewDashboard() {
     console.log(videostate);
     return (
         <>
-            <video src={videostate.video_path} controls></video>
+            <video src={videostate.video_path} controls type="mp4"></video>
         </>
     )
 }
