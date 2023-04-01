@@ -108,3 +108,7 @@
     text-decoration: underline;
   }
   
+
+  .text-danger{
+    color: white;
+  }

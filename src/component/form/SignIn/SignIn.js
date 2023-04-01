@@ -94,7 +94,7 @@ const SignIn = () => {
                         required
                     />
                 </div>
-                {error && <div className="text-danger mb-3">{error}</div>}
+                {error && <div className="text-danger">{error}</div>}
                 <div className="d-flex justify-content-between align-items-end">
                     <button className="btn btn-info btn-md" type="submit">
                         SignIn

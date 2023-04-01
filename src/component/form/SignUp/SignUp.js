@@ -109,7 +109,7 @@ const Signup = () => {
                             required
                         />
                     </div>
-                    {error && <div>{error}</div>}
+                    {error && <div className='text-danger'>{error}</div>}
                 </div>
 
                 <button type="submit" className='button'>Signup</button>
